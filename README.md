@@ -30,4 +30,3 @@ This application is a React technical test for a Software Developer position at 
 ## Visit live app
 
 https://hostfully-react-test.vercel.app/
-

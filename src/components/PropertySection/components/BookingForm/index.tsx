@@ -25,7 +25,7 @@ export const BookingForm = ({ propertyData }: Props) => {
 
   return (
     <div className="mt-4 rounded border-gray-200 w-full border px-6 py-4">
-      <div className="flex w-full">
+      <div className="flex w-full md:flex-row flex-col">
         <BookingDetails
           numberOfGuests={numberOfGuests}
           bookingPeriod={bookingPeriod}

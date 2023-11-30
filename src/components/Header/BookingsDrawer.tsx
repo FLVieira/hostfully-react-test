@@ -22,6 +22,7 @@ export const BookingsDrawer = ({ onClose, isDrawerVisible, onEditBooking, showDe
       placement="right"
       closable={false}
       onClose={onClose}
+      size="large"
       extra={
         <Button type="text" onClick={onClose}>
           <IoCloseOutline size={24} />

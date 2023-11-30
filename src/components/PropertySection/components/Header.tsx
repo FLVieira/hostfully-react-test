@@ -17,7 +17,7 @@ export const HeaderComponent = ({
 }: Props) => {
   return (
     <div className="flex justify-between items-center w-full mb-4 px-4">
-      <h3 className="text-2xl">{propertyData.name}</h3>
+      <h3 className="text-xl md:text-3xl">{propertyData.name}</h3>
       <div className="flex items-center">
         <Tooltip title="Go back">
           <button

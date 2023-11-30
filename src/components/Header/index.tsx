@@ -47,7 +47,7 @@ export const Header = () => {
         <Badge count={bookings.length}>
           <button
             onClick={showDrawer}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 md:py-4 px-4 rounded text-md md:text-xl">
             Show Bookings
           </button>
         </Badge>

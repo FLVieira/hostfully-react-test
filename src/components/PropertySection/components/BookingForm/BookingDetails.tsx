@@ -27,30 +27,34 @@ export const BookingDetails = (props: Props) => {
   } = props;
 
   return (
-    <div className="w-[50%]">
+    <div className="md-[50%] w-[100%]">
       <p className="mb-4">
-        <span className="mr-1 text-lg font-semibold">
+        <span className="mr-1 text-lg lg:text-xl font-semibold">
           {formatToCurrency(propertyData.pricePerNight)}
         </span>{" "}
         night
       </p>
       <div className="mt-4">
-        <div className="mb-2">Check-in / Check-out</div>
+        <div className="mb-2 text-lg lg:text-lg">Check-in / Check-out</div>
         <DatePicker.RangePicker
           onChange={handleBookingPeriodChange}
           value={bookingPeriod}
+          className="w-[100%] md:w-[90%] lg:w-[80%] text-base"
           disabledDate={isDateDisabled}
+          inputReadOnly
+          size="large"
         />
         {isErrorVisible && (
           <p className="text-red-500 text-sm mt-2">The selected dates are already booked.</p>
         )}
       </div>
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-start w-full">
         <div className="mt-4">
-          <div className="mb-2">Number of guests</div>
+          <div className="mb-2 select-none text-lg lg:text-lg">Number of guests</div>
           <Slider
             min={1}
             max={20}
+            className="w-[70%] mt-8 md:mt-2"
             onChange={onNumbersOfGuestsChange}
             value={typeof numberOfGuests === "number" ? numberOfGuests : 0}
           />
