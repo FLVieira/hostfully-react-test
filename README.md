@@ -27,5 +27,7 @@ This application is a React technical test for a Software Developer position at 
 3. yarn
 4. yarn start
 
-## Visit application deploy
+## Visit live app
+
+https://hostfully-react-test.vercel.app/
 
