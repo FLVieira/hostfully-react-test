@@ -16,6 +16,14 @@ interface Props {
 export const BookingsDrawer = ({ onClose, isDrawerVisible, onEditBooking, showDeleteConfirm }: Props) => {
   const { bookings } = useBookingContext();
 
+  const handleDeleteBtnClick = (bookingId: string) => {
+    showDeleteConfirm(bookingId);
+  };
+
+  const formatDate = (date: string) => {
+    return dayjs(date).format("MM/DD/YYYY");
+  };
+
   return (
     <Drawer
       title="Your Bookings"
@@ -41,8 +49,8 @@ export const BookingsDrawer = ({ onClose, isDrawerVisible, onEditBooking, showDe
               description={
                 <>
                   <div>
-                    Dates: {dayjs(booking.startDate).format("MM/DD/YYYY")} -{" "}
-                    {dayjs(booking.endDate).format("MM/DD/YYYY")}
+                    Dates: {formatDate(booking.startDate)} -{" "}
+                    {formatDate(booking.endDate)}
                   </div>
                   <div>Location: {booking.roomType}</div>
                 </>
@@ -53,9 +61,7 @@ export const BookingsDrawer = ({ onClose, isDrawerVisible, onEditBooking, showDe
                 key="edit"
                 type="link"
                 icon={<FaEdit />}
-                onClick={() => {
-                  onEditBooking(booking);
-                }}
+                onClick={() => onEditBooking(booking)}
               />
             </Tooltip>
             <Tooltip title="Delete">
@@ -64,9 +70,7 @@ export const BookingsDrawer = ({ onClose, isDrawerVisible, onEditBooking, showDe
                 type="link"
                 danger
                 icon={<FaTrashAlt />}
-                onClick={() => {
-                  showDeleteConfirm(booking.id);
-                }}
+                onClick={() => handleDeleteBtnClick(booking.id)}
               />
             </Tooltip>
           </List.Item>

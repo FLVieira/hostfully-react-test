@@ -1,8 +1,6 @@
 export const formatToCurrency = (val: number) => {
-  const usFormat = {
+  return val.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
-  };
-
-  return val.toLocaleString("en-US", usFormat);
+  });
 };
